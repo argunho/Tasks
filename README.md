@@ -1,6 +1,6 @@
 # Get things do (C#, Asp.Net COre 3.1, JavaScript, Razor, RestApi)
 
-Uppgifts projekten består av två projekt som ligger i samma i solution.
+### Uppgifts projekten består av två projekt som ligger i samma i solution.
 Projekt som heter Tasks är en backend (webapi) samt koppling till
 databasen och relation med databasen sker i denna projekten.
 TasksUI är en vanlig MVC projekt och körs i mitt fall som klientgränssnitt
