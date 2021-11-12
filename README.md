@@ -9,10 +9,8 @@ och använder referenser from Tasks. Att logga in och registrera på hemsidan, v
 endpoint.. Varsin method i ActionController avsett att kommunicera med rätt endpoint.
 
 ## Vilken säkerhetslösning är implementerad i API:et
-### - JWT security är implementerad att ingen oberoende kunde använda projekten. All endpoint kräver att dem blir anropat bara av inloggade
-användare. HandleTasks- och HandleUsersController är markerad i början med [Authorize] med detta förbjuden åtkomst till dem som är inte
-inloggad. I klass Help Repository skapas security token vid inloggning och registrering och sparas i projekt Loc anrop?
-### -Varje endpoint i webapi har sitt eget namn och vid varje anrop kontrolleras Id på inloggad användare om den användare som gjorde anrop är inte Author eller inte bjuden till uppgiftslista då nekas anrop.
+#### - JWT security är implementerad att ingen oberoende kunde använda projekten. All endpoint kräver att dem blir anropat bara av inloggade användare. HandleTasks- och HandleUsersController är markerad i början med [Authorize] med detta förbjuden åtkomst till dem som är inte inloggad. I klass Help Repository skapas security token vid inloggning och registrering och sparas i projekt Loc anrop?
+#### -Varje endpoint i webapi har sitt eget namn och vid varje anrop kontrolleras Id på inloggad användare om den användare som gjorde anrop är inte Author eller inte bjuden till uppgiftslista då nekas anrop.
 
 ## WebApi HandleTasksController - ansvarar för alla anrop som gäller
 ## Uppgifter och tags, kort förklaring till dem, ser du nedan:
