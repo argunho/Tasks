@@ -1,0 +1,36 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Tasks.Models
+
+@inject SignInManager<Users> SignInManager
+@inject UserManager<Users> UserManager
+
+    <ul class="navbar-nav">
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <li class="nav-item">
+                <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link remove-link" href="#" onclick="return handleData('RemoveAccount', 'DELETE')">Radera konto</a>
+            </li>
+            <li class="nav-item">
+                <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <button id="logout" type="submit" class="nav-link btn btn-link text-secondary">Logout</button>
+                </form>
+            </li>
+
+            <form class="form-inline my-2 my-lg-0 float-left">
+                <input class="form-control mr-sm-2" type="search" id="search" placeholder="Sök uppgift ..." aria-label="Search">
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="button" onclick="getSearchResult()">Sök</button>
+            </form>
+        }
+        else
+        {
+            <li class="nav-item">
+                <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
+            </li>
+        }
+    </ul>

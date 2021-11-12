@@ -1,0 +1,19 @@
+﻿
+@model TasksList
+
+@{
+    ViewData["Title"] = "Uppgift - " + Model.Name;
+}
+
+    <div class="header-block">
+        <a href="#" class="active">@Model.Name</a>
+        <a class="btn btn-outline-primary btn-new" href="/NewTaskTag/@Model.Id">Lägg till ny tag</a>
+        <a class="btn btn-outline-secondary" href="#" onclick="history.back()">Tillbaka</a>
+    </div>
+
+<div class="view-description">
+    @Model.Description
+</div>
+
+<!--Task tags partial-->
+@await Component.InvokeAsync("TaskTags", new { id = Model.Id })

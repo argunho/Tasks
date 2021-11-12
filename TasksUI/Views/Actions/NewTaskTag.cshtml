@@ -1,0 +1,28 @@
+﻿
+@model Tags
+
+@{
+    ViewData["Title"] = "Ny uppgifts tag";
+    var id = Context.Request.Path.Value.ToString();
+    id = id.Substring(id.LastIndexOf("/") + 1);
+}
+
+<div class="header-block">
+    <a href="#" class="active">Ny uppgift</a>
+    <a class="btn btn-outline-secondary" href="#" onclick="history.back()">Tillbaka</a>
+</div>
+
+<form class="form-block" onsubmit="return sendData(this, 'NewTaskTag', 'POST')">
+    <input type="hidden" name="TaskId" value="@id"/>
+
+    <div class="form-group">
+        <label asp-for="Text"></label>
+        <textarea asp-for="Text" class="form-control"></textarea>
+    </div>
+
+
+    <div class="form-group text-right">
+        <input type="submit" class="btn btn-outline-success" value="Skicka" />
+    </div>
+</form>
+
